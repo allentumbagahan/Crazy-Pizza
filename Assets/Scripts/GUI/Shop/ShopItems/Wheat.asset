@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272d3d4eb76f5f841abd7f11a69c1b8c, type: 3}
+  m_Name: Wheat
+  m_EditorClassIdentifier: 
+  Name: Wheat
+  ItemIcon: {fileID: -1113953392, guid: a9b4e332b7548e043bd8c7ac9ac5d7da, type: 3}
+  ItemGameObjectPrefab: {fileID: 5551844798335528411, guid: 25e6a195bd09a0d488eeb76eb5352b05, type: 3}
+  Price: 11
