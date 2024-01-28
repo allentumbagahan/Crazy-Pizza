@@ -8,6 +8,10 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
     public InputField createInput;
     public InputField joinInput;
+    public void Start()
+    {
+        CreateRoom(); // disable creating room 
+    }
     public void CreateRoom()
     {
         PhotonNetwork.CreateRoom(createInput.text);

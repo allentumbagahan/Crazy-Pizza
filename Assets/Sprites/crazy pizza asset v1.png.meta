@@ -1782,7 +1782,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1790,6 +1790,69 @@ TextureImporter:
       bones: []
       spriteID: 16ab262f11ec7cb4197b797c4b4b122e
       internalID: 432361229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crazy pizza asset v1_79
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 206
+        width: 41
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef52173fefa67845b9f463d9a8c6a71
+      internalID: 1748798100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crazy pizza asset v1_80
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 458
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6f58dce2b798a4db7a70267060a7d0
+      internalID: -2105910067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crazy pizza asset v1_81
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 458
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e041f7b86163f48a798f9deb1e4628
+      internalID: 1201987705
       vertices: []
       indices: 
       edges: []
@@ -1882,7 +1945,10 @@ TextureImporter:
       crazy pizza asset v1_76: -1044513433
       crazy pizza asset v1_77: -2034919811
       crazy pizza asset v1_78: 432361229
+      crazy pizza asset v1_79: 1748798100
       crazy pizza asset v1_8: -1741795193
+      crazy pizza asset v1_80: -2105910067
+      crazy pizza asset v1_81: 1201987705
       crazy pizza asset v1_9: 388586957
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -24,7 +24,7 @@ public class Play : MonoBehaviour
     {
         Debug.Log("Object Clicked!");
         _audioSource.Play();
-        //ChangeScene("Loading Scene");
-        ChangeScene("In-Game");
+        ChangeScene("Loading Scene");
+        //ChangeScene("In-Game");
     }
 }
