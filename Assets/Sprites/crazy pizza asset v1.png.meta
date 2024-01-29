@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
@@ -1824,7 +1824,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1845,7 +1845,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1949,7 +1949,19 @@ TextureImporter:
       crazy pizza asset v1_8: -1741795193
       crazy pizza asset v1_80: -2105910067
       crazy pizza asset v1_81: 1201987705
+      crazy pizza asset v1_82: 1585327069
+      crazy pizza asset v1_83: 1298589358
+      crazy pizza asset v1_84: 63566629
+      crazy pizza asset v1_85: 639885104
+      crazy pizza asset v1_86: 1228969178
+      crazy pizza asset v1_87: 1276300175
+      crazy pizza asset v1_88: 1558921492
+      crazy pizza asset v1_89: -1111355892
       crazy pizza asset v1_9: 388586957
+      crazy pizza asset v1_90: -413521885
+      crazy pizza asset v1_91: 40839473
+      crazy pizza asset v1_92: -1281571015
+      crazy pizza asset v1_93: 2097808209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
