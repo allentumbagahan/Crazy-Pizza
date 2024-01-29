@@ -1139,7 +1139,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1160,7 +1160,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1168,6 +1168,27 @@ TextureImporter:
       bones: []
       spriteID: 446dd68519c6e384a80e345effe77448
       internalID: -1133564464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_20
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 416
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb608304279bf8489dce9e950e47b78
+      internalID: -426661102
       vertices: []
       indices: 
       edges: []
@@ -1196,6 +1217,7 @@ TextureImporter:
       Outer House Design_18: 89428933
       Outer House Design_19: -1133564464
       Outer House Design_2: -962639464
+      Outer House Design_20: -426661102
       Outer House Design_3: -1111846018
       Outer House Design_4: -222615240
       Outer House Design_5: 202904051
