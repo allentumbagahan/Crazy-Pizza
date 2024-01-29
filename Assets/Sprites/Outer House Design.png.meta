@@ -866,7 +866,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -887,7 +887,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -895,6 +895,279 @@ TextureImporter:
       bones: []
       spriteID: 8ed10100269d310438663dd1373c5d69
       internalID: 641791582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_7
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 479
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117a8ce7b2912bd4c9029643a4cdacb9
+      internalID: 442809776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_8
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 458
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55a29c072167a64b96ca1dfdf78ad65
+      internalID: -1992238834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 437
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5061b68dc0c3643b1ba69a335d6604
+      internalID: -5771486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_10
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 416
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041c984cc557843449150477f8078659
+      internalID: -1945720553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 395
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9b1311f7d4963409fd5a03b950cb17
+      internalID: 823926148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 374
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cd4679a2adf4e40a0170cd8b692b9a
+      internalID: -1029023848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_13
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 374
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a01d8d6068e5e0478b4a0c232966de4
+      internalID: 1234685540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_14
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 395
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b58958357f7a54488618f507f99989
+      internalID: 708633743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_15
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 395
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c5a25e81034024a9a52280c3a074aa
+      internalID: -779117525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_16
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 374
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b88bf27e4c5c7142b1951dcc260f64f
+      internalID: -1132230616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 374
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e506dd89deda3f48b693f4a21738c51
+      internalID: -131423729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_18
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 395
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fabf18856928584492615dffd05fa24
+      internalID: 89428933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outer House Design_19
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 374
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446dd68519c6e384a80e345effe77448
+      internalID: -1133564464
       vertices: []
       indices: 
       edges: []
@@ -912,11 +1185,24 @@ TextureImporter:
     nameFileIdTable:
       Outer House Design_0: 239151983
       Outer House Design_1: -116550158
+      Outer House Design_10: -1945720553
+      Outer House Design_11: 823926148
+      Outer House Design_12: -1029023848
+      Outer House Design_13: 1234685540
+      Outer House Design_14: 708633743
+      Outer House Design_15: -779117525
+      Outer House Design_16: -1132230616
+      Outer House Design_17: -131423729
+      Outer House Design_18: 89428933
+      Outer House Design_19: -1133564464
       Outer House Design_2: -962639464
       Outer House Design_3: -1111846018
       Outer House Design_4: -222615240
       Outer House Design_5: 202904051
       Outer House Design_6: 641791582
+      Outer House Design_7: 442809776
+      Outer House Design_8: -1992238834
+      Outer House Design_9: -5771486
       Outside Asset_0: 34779645
       Outside Asset_1: -623688938
       Outside Asset_10: -1301573190

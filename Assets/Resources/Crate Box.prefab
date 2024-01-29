@@ -471,9 +471,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1778898211
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
   m_FlipX: 0
@@ -556,9 +556,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 1778898211
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2014932129, guid: b8f11ee8656b3bd40b6d6617f5dacaa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -808,9 +808,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: 1778898211
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1979426820, guid: b8f11ee8656b3bd40b6d6617f5dacaa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -836,6 +836,7 @@ GameObject:
   - component: {fileID: 426338925122780928}
   - component: {fileID: 4733463581564434757}
   - component: {fileID: 4042123529239383187}
+  - component: {fileID: 8598377974030011342}
   m_Layer: 0
   m_Name: Crate Box
   m_TagString: Untagged
@@ -913,7 +914,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &8457114765212420550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1057,6 +1058,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.120901406, y: 0.24846236}
   m_EdgeRadius: 0
+--- !u!210 &8598377974030011342
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903922557563129698}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 1
 --- !u!1 &7186009773296477629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1330,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3862906196751828330}
     m_Modifications:
+    - target: {fileID: 3151217244607031750, guid: a5bfc214e9eb9354caba194e210ab2ba, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151217244607031750, guid: a5bfc214e9eb9354caba194e210ab2ba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1778898211
+      objectReference: {fileID: 0}
     - target: {fileID: 7284021515863034745, guid: a5bfc214e9eb9354caba194e210ab2ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1391,7 +1412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7284021515863034745, guid: a5bfc214e9eb9354caba194e210ab2ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.2
+      value: -0.198
       objectReference: {fileID: 0}
     - target: {fileID: 7284021515863034745, guid: a5bfc214e9eb9354caba194e210ab2ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
