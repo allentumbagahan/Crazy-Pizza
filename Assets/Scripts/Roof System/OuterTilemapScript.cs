@@ -9,6 +9,7 @@ public class OuterTilemapScript : MonoBehaviour
     {
         Debug.Log("trigger tilemap");
         gameObject.GetComponent<TilemapRenderer>().enabled = false;
+        
     }
     void OnTriggerExit2D(Collider2D other)
     {

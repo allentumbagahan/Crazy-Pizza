@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: -1862564339351745497}
   - component: {fileID: -5601721991865808507}
   - component: {fileID: -7090178701403925773}
+  - component: {fileID: 4553366909276505563}
   m_Layer: 6
   m_Name: Customer
   m_TagString: Untagged
@@ -169,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1464676858, guid: ef0bfb9ec8f3de14ca587f988804a6fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -546,6 +547,18 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!210 &4553366909276505563
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516044752478027137}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_SortAtRoot: 0
 --- !u!1001 &1462116616498541330
 PrefabInstance:
   m_ObjectHideFlags: 0
