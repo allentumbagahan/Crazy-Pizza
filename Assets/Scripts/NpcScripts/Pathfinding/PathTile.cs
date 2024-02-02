@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -13,18 +14,21 @@ public class PathTile
     public HashSet<PathTile> paths;
     public Dictionary<Vector3Int, PathTile> allPathsVisited;
     public List<PathTile> QueuePathsToGetNodes;
+    [SerializeField] protected List<PositionAndDirection> ResultPath;
     public bool IsPath;
     [SerializeField] private static HashSet<Vector3Int> checkedPositions = new HashSet<Vector3Int>();
+    public PositionAndDirection.Directions FromParentToThisDirection;
+    PathIndicator pathIndicator;
+    Tilemap tilemap;
 
     public PathTile(PathTile startPath, PathTile parent, Vector3Int pathPosition, Vector3Int targetPos, GameObject pathMap)
     {
-        this.paths = new HashSet<PathTile>();
-        this.IsPath = false;
         if (startPath != null)
         {
             this.startPath = startPath;
             this.pathMap = this.startPath.pathMap;
             allPathsVisited = this.startPath.allPathsVisited;
+
         }
         else
         {
@@ -32,8 +36,16 @@ public class PathTile
             this.pathMap = pathMap;
             allPathsVisited = new Dictionary<Vector3Int, PathTile>();
             QueuePathsToGetNodes = new List<PathTile>();
+            ResultPath = new List<PositionAndDirection>();
             Debug.Log(pathMap + "path");
         }
+        pathIndicator = this.startPath.pathMap.GetComponent<PathIndicator>();
+        tilemap = this.startPath.pathMap.GetComponent<Tilemap>();
+        bool isNearX = Math.Abs(pathPosition.x - targetPos.x) == 1 && Math.Abs(pathPosition.y - targetPos.y) == 0;
+        bool isNearY = Math.Abs(pathPosition.y - targetPos.y) == 1 && Math.Abs(pathPosition.x - targetPos.x) == 0;
+        bool isNearPos = isNearX || isNearY;
+        this.paths = new HashSet<PathTile>();
+        this.IsPath = false;
 
         this.parentPath = parent;
         this.pathPosition = pathPosition;
@@ -51,18 +63,19 @@ public class PathTile
             Debug.Log("test target reached");
             this.startPath.IsPath = true;
             setAsPath();
-        }
-        else
+        } 
+        if(pathIndicator.block == tilemap.GetTile(targetPos) && isNearPos)
         {
-            
-
+            this.startPath.IsPath = true;
+            setAsPath();
         }
     }
 
     public void setAsPath()
     {
+        PositionAndDirection PosAndDirection = new PositionAndDirection(this.pathPosition, this.FromParentToThisDirection);
         this.IsPath = true;
-        Debug.Log("TruePath " + this.pathPosition);
+        this.startPath.ResultPath.Insert(0, PosAndDirection);
         if(this.IsPath) this.startPath.pathMap.GetComponent<Tilemap>().SetTile(pathPosition, this.startPath.pathMap.GetComponent<PathIndicator>().testPath);
         clearTempPath();
         if (parentPath != null) parentPath.setAsPath();
@@ -85,8 +98,6 @@ public class PathTile
 
     private void GetNodesPath()
     {
-        var pathIndicator = this.startPath.pathMap.GetComponent<PathIndicator>();
-        var tilemap = this.startPath.pathMap.GetComponent<Tilemap>();
 
         for (int x = -1; x <= 1; x++)
         {
@@ -110,6 +121,10 @@ public class PathTile
                         if(!allPathsVisited.ContainsKey(positionTemp))
                         {
                             PathTile childPath = new PathTile(this.startPath, this, positionTemp, this.targetPos, this.startPath.pathMap);
+                            if(x == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Left;
+                            else if(x == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Right;
+                            else if(y == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Down;
+                            else if(y == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Top;
                             this.paths.Add(childPath);
                             allPathsVisited[positionTemp] = childPath;
                             this.startPath.QueuePathsToGetNodes.Add(childPath);
@@ -132,8 +147,15 @@ public class PathTile
         while (!this.startPath.IsPath)
         {    
             List<PathTile> queueTemp = this.startPath.QueuePathsToGetNodes;
-            queueTemp[0].GetNodesPath();
-            this.startPath.QueuePathsToGetNodes.RemoveAt(0);
+            if(queueTemp.Count >= 1)
+            {
+                queueTemp[0].GetNodesPath();
+                this.startPath.QueuePathsToGetNodes.RemoveAt(0);
+            }
         }
+    }
+    public List<PositionAndDirection> GetResults()
+    {
+        return ResultPath;
     }
 }
