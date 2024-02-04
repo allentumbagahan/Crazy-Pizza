@@ -24659,9 +24659,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureList: []
+  cashier: []
   CustomerInteraction: []
   itemList: []
   customerExit: []
+  ObjectsList: []
 --- !u!114 &1006767462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30788,7 +30790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1, y: 0}
+  m_AnchoredPosition: {x: -0.099998, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!483693784 &2082659522
@@ -31581,6 +31583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer
       objectReference: {fileID: 0}
+    - target: {fileID: 2267106813256809703, guid: 246ef00bfa4529345af53c0dcf9c5891, type: 3}
+      propertyPath: objectListerObject
+      value: 
+      objectReference: {fileID: 1006767459}
     - target: {fileID: 4432781709146437796, guid: 246ef00bfa4529345af53c0dcf9c5891, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.94
@@ -31627,7 +31633,7 @@ PrefabInstance:
       objectReference: {fileID: 234229882}
     - target: {fileID: 6018944891680110391, guid: 246ef00bfa4529345af53c0dcf9c5891, type: 3}
       propertyPath: moveSpeed
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8459351512232092705, guid: 246ef00bfa4529345af53c0dcf9c5891, type: 3}
       propertyPath: sceneViewId

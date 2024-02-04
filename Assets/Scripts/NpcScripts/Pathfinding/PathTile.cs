@@ -74,6 +74,10 @@ public class PathTile
     public void setAsPath()
     {
         PositionAndDirection PosAndDirection = new PositionAndDirection(this.pathPosition, this.FromParentToThisDirection);
+        if(this.FromParentToThisDirection == PositionAndDirection.Directions.None && this.parentPath != null)
+        {
+            this.FromParentToThisDirection = this.parentPath.FromParentToThisDirection;
+        }
         this.IsPath = true;
         this.startPath.ResultPath.Insert(0, PosAndDirection);
         //if(this.IsPath) this.startPath.pathMap.GetComponent<Tilemap>().SetTile(pathPosition, this.startPath.pathMap.GetComponent<PathIndicator>().testPath);
@@ -94,6 +98,7 @@ public class PathTile
         }
         paths.Clear();
         if (truePath != null) paths.Add(truePath);
+        this.startPath.allPathsVisited.Clear();
     }
 
     private void GetNodesPath()

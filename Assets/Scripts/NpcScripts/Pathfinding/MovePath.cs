@@ -11,10 +11,8 @@ public class MovePath : MonoBehaviour
     [SerializeField] private PathTile path;
     [SerializeField] private bool targetReached;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private GameObject targetTemp; //For Testing
     [SerializeField] private Vector3 targetPosition; //Calculating
     [SerializeField] private float targetDistance; //Calculating
-    [SerializeField] private AnimationManager animationManager; //Calculating
     public delegate void MoveFunction(string Direction);
     private MoveFunction move;
     private Tilemap pathTileMap;
@@ -23,6 +21,8 @@ public class MovePath : MonoBehaviour
     //Entry
     public void MoveTo(GameObject targetObject)
     {
+        InitializeField();
+        Debug.Log("Cashier " + targetObject + " pathTileMap " + pathTileMap);
         Vector3Int targetCellPosTemp = pathTileMap.WorldToCell(targetObject.transform.position);
         Vector3Int thisCellPosTemp = pathTileMap.WorldToCell(gameObject.transform.position);
         Move(thisCellPosTemp, targetCellPosTemp);
@@ -33,18 +33,18 @@ public class MovePath : MonoBehaviour
         path = new PathTile(null, null, thisPosition, targetPosition, pathMap); //new Vector3Int(0, -5,0)
         path.StartPathFinding();
         ResultPath = path.GetResultsInShorcut();
+        path = null;
     }
     private void Start()
     {
+        InitializeField();
+    }
+    private void InitializeField()
+    {
         pathTileMap = pathMap.GetComponent<Tilemap>();
-         direction = new Vector3(0,0,0);
+        direction = new Vector3(0,0,0);
     }
     private void Update() {
-        if(targetTemp != null)
-        {
-            MoveTo(targetTemp);
-            targetTemp = null;
-        }
         //move to each path
         if(ResultPath.Count > 0)
         {

@@ -156,7 +156,7 @@ MonoBehaviour:
   cellPosToWorldDown: {x: 0, y: 0, z: 0}
   furnitureTilemap: {fileID: 0}
   positionToIn: 
-  objectType: 0
+  objectType: 4
 --- !u!114 &8106409975446901302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,22 +175,28 @@ MonoBehaviour:
   recieveItem: []
   receiveType: 1
   isGiveItem: 0
+  giveSource: 0
   giveItem: {fileID: 0}
   giveItems: []
   giveType: 1
   isInteractWithOther1: 1
   interactWithThis1: {fileID: 0}
   itemToDisplayRenderingObject: {fileID: 0}
+  imageDisplayToInteractButton: {fileID: 0}
   isProcesItem: 0
   progressSetting: {fileID: 0}
   isConfirmBeforeProcess: 0
   processType: 0
+  processCondition: 2
+  ToolRequirement: {fileID: 0}
   itemList: []
   itemToDisplayInstatiate: {fileID: 0}
   isProcessingItem: 0
   progressCount: 0
   isNotReadyToGet: 0
   isReadyToProcess: 0
+  lastPlayerCollideData: {fileID: 0}
+  playerProcessingSpeed: 0
 --- !u!61 &294561539661413174
 BoxCollider2D:
   m_ObjectHideFlags: 0

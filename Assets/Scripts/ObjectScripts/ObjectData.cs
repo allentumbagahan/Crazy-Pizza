@@ -18,13 +18,6 @@ public class ObjectData : MonoBehaviour
     public Vector3 cellPosToWorldUp;
     public Vector3 cellPosToWorldDown;
     public Tilemap furnitureTilemap;
-    public enum ObjectType
-    {
-        Furniture,
-        FurnitureCustomerInteraction,
-        Item,
-        CustomerExit
-    }
     public enum PositionToIn
     {
         Up,
@@ -35,7 +28,7 @@ public class ObjectData : MonoBehaviour
     }
     [Header("Set or Attach")]
     public List<PositionToIn> positionToIn = new List<PositionToIn>();
-    public ObjectType objectType = ObjectType.Furniture;
+    public ObjectLister.ObjectType objectType = ObjectLister.ObjectType.Furniture;
     void Start()
     {
         //find and add this object to objectLister
