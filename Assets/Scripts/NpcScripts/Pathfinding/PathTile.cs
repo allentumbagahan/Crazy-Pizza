@@ -76,7 +76,7 @@ public class PathTile
         PositionAndDirection PosAndDirection = new PositionAndDirection(this.pathPosition, this.FromParentToThisDirection);
         this.IsPath = true;
         this.startPath.ResultPath.Insert(0, PosAndDirection);
-        if(this.IsPath) this.startPath.pathMap.GetComponent<Tilemap>().SetTile(pathPosition, this.startPath.pathMap.GetComponent<PathIndicator>().testPath);
+        //if(this.IsPath) this.startPath.pathMap.GetComponent<Tilemap>().SetTile(pathPosition, this.startPath.pathMap.GetComponent<PathIndicator>().testPath);
         clearTempPath();
         if (parentPath != null) parentPath.setAsPath();
     }
@@ -124,7 +124,7 @@ public class PathTile
                             if(x == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Left;
                             else if(x == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Right;
                             else if(y == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Down;
-                            else if(y == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Top;
+                            else if(y == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Up;
                             this.paths.Add(childPath);
                             allPathsVisited[positionTemp] = childPath;
                             this.startPath.QueuePathsToGetNodes.Add(childPath);
@@ -156,6 +156,30 @@ public class PathTile
     }
     public List<PositionAndDirection> GetResults()
     {
+        ResultPath.RemoveAt(0); //Remove First Path
         return ResultPath;
+    }
+    public List<PositionAndDirection> GetResultsInShorcut()
+    {
+        ResultPath.RemoveAt(0); //Remove First Path
+        return MergeSameDirectionPath(ResultPath);
+    }
+    public List<PositionAndDirection> MergeSameDirectionPath(List<PositionAndDirection> pathTemp)
+    {
+        List<PositionAndDirection> ResultPathTemp = pathTemp;
+        int i = 1;
+        if(ResultPathTemp.Count > 1)
+        {
+            while(i < ResultPathTemp.Count)
+            {
+                if(ResultPathTemp[i - 1].Direction.Equals(ResultPathTemp[i].Direction))
+                {
+                    ResultPathTemp.RemoveAt(i - 1);
+                    i--;
+                }
+                i++;
+            }
+        }
+        return ResultPathTemp;
     }
 }

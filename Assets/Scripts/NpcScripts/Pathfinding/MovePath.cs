@@ -7,13 +7,18 @@ public class MovePath : MonoBehaviour
 {
     [SerializeField] private GameObject pathMap;
     [SerializeField] private List<PositionAndDirection> ResultPath;
+    [SerializeField] private PositionAndDirection currentTargetPath;
     [SerializeField] private PathTile path;
     [SerializeField] private bool targetReached;
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject targetTemp; //For Testing
     [SerializeField] private Vector3 targetPosition; //Calculating
     [SerializeField] private float targetDistance; //Calculating
+    [SerializeField] private AnimationManager animationManager; //Calculating
+    public delegate void MoveFunction(string Direction);
+    private MoveFunction move;
     private Tilemap pathTileMap;
+    Vector3 direction;
 
     //Entry
     public void MoveTo(GameObject targetObject)
@@ -27,11 +32,12 @@ public class MovePath : MonoBehaviour
         //find path
         path = new PathTile(null, null, thisPosition, targetPosition, pathMap); //new Vector3Int(0, -5,0)
         path.StartPathFinding();
-        ResultPath = path.GetResults();
+        ResultPath = path.GetResultsInShorcut();
     }
     private void Start()
     {
         pathTileMap = pathMap.GetComponent<Tilemap>();
+         direction = new Vector3(0,0,0);
     }
     private void Update() {
         if(targetTemp != null)
@@ -42,35 +48,30 @@ public class MovePath : MonoBehaviour
         //move to each path
         if(ResultPath.Count > 0)
         {
-            while(true)
+            
+            if(currentTargetPath != ResultPath[0] || currentTargetPath == null)
             {
-                if(ResultPath.Count > 1)
-                {
-                    if(ResultPath[0].Direction !=  ResultPath[1].Direction) break;
-                    ResultPath.RemoveAt(0);
-                }
-                else
-                {
-                    break;
-                }
-
-            }
-            if(ResultPath.Count > 0)
-            {
-                targetReached = false;
-                targetPosition = pathTileMap.CellToWorld(ResultPath[0].Position);
+                currentTargetPath = ResultPath[0];
+                targetPosition = pathTileMap.CellToWorld(currentTargetPath.Position);
                 targetPosition.x += 0.815f;
                 targetPosition.y += 0.815f;
-                Vector3 direction = (targetPosition - transform.position);
-                transform.position += (direction*moveSpeed);
-                targetDistance = Vector3.Distance(transform.position, targetPosition);
-                if(targetDistance <= 0.1f)
-                {
-                    targetReached = true;
-                    ResultPath.RemoveAt(0);
-                }
+                direction = (targetPosition - transform.position);
+                if(move != null) move.Invoke(currentTargetPath.Direction);
+            }   
+            targetReached = false;
+            transform.position += (direction.normalized*moveSpeed);
+            if((transform.position - targetPosition).sqrMagnitude <moveSpeed*moveSpeed)
+            {
+                targetReached = true;
+                transform.position = targetPosition;
+                ResultPath.Remove(currentTargetPath);
             }
         }
     }
+    public void SetMoveFunc(MoveFunction moveFunc)
+    {
+        move = new MoveFunction(moveFunc);
+    }
+    
 
 }

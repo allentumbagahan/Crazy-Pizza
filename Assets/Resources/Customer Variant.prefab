@@ -66,6 +66,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 516044752478027137, guid: 05bfcdb21bef1fb40965a9e729b4d8a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6018944891680110391}
+    - targetCorrespondingSourceObject: {fileID: 516044752478027137, guid: 05bfcdb21bef1fb40965a9e729b4d8a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6731399572301634241}
+    - targetCorrespondingSourceObject: {fileID: 516044752478027137, guid: 05bfcdb21bef1fb40965a9e729b4d8a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 924468202968336798}
   m_SourcePrefab: {fileID: 100100000, guid: 05bfcdb21bef1fb40965a9e729b4d8a4, type: 3}
 --- !u!1 &1471035561627669895 stripped
 GameObject:
@@ -85,6 +91,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathMap: {fileID: 0}
+  ResultPath: []
+  currentTargetPath:
+    Position: {x: 0, y: 0, z: 0}
+    DirectionType: 0
+    Direction: 
   path:
     pathMap: {fileID: 0}
     pathPosition: {x: 0, y: 0, z: 0}
@@ -93,3 +104,35 @@ MonoBehaviour:
     ResultPath: []
     IsPath: 0
     FromParentToThisDirection: 0
+  targetReached: 0
+  moveSpeed: 0
+  targetTemp: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetDistance: 0
+  animationManager: {fileID: 0}
+--- !u!114 &6731399572301634241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471035561627669895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d293c02c05bc4584d7d8642877669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &924468202968336798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471035561627669895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0540e654550d3b34d844c00c1114494e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationManager: {fileID: 0}
+  movePathManager: {fileID: 0}
