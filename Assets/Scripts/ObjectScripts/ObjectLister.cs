@@ -16,7 +16,8 @@ public class ObjectLister : MonoBehaviour
         FurnitureCustomerInteraction,
         Item,
         CustomerExit,
-        Cashier
+        Cashier,
+        Chair
     }
     [SerializeField] private List<GameObject> ObjectsList;
     public void AddObject(GameObject obj)

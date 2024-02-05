@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public class PathTile
 {
+    public int pathCreated;
     public GameObject pathMap;
     public PathTile startPath;
     public PathTile parentPath;
@@ -23,17 +24,19 @@ public class PathTile
 
     public PathTile(PathTile startPath, PathTile parent, Vector3Int pathPosition, Vector3Int targetPos, GameObject pathMap)
     {
+        IncreasePathCreatedCount();
         if (startPath != null)
         {
             this.startPath = startPath;
             this.pathMap = this.startPath.pathMap;
             allPathsVisited = this.startPath.allPathsVisited;
-
+            pathCreated = this.startPath.pathCreated;
         }
         else
         {
             this.startPath = this;
             this.pathMap = pathMap;
+            pathCreated = 0;
             allPathsVisited = new Dictionary<Vector3Int, PathTile>();
             QueuePathsToGetNodes = new List<PathTile>();
             ResultPath = new List<PositionAndDirection>();
@@ -65,6 +68,11 @@ public class PathTile
             setAsPath();
         } 
         if(pathIndicator.block == tilemap.GetTile(targetPos) && isNearPos)
+        {
+            this.startPath.IsPath = true;
+            setAsPath();
+        }
+        if(GetPathCreatedCount() == 30)
         {
             this.startPath.IsPath = true;
             setAsPath();
@@ -123,13 +131,13 @@ public class PathTile
                 {
                     try
                     {
-                        if(!allPathsVisited.ContainsKey(positionTemp))
+                        if(!allPathsVisited.ContainsKey(positionTemp) )
                         {
                             PathTile childPath = new PathTile(this.startPath, this, positionTemp, this.targetPos, this.startPath.pathMap);
                             if(x == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Left;
-                            else if(x == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Right;
+                            else if(x == 1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Right;
                             else if(y == -1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Down;
-                            else if(y == +1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Up;
+                            else if(y == 1) childPath.FromParentToThisDirection = PositionAndDirection.Directions.Up;
                             this.paths.Add(childPath);
                             allPathsVisited[positionTemp] = childPath;
                             this.startPath.QueuePathsToGetNodes.Add(childPath);
@@ -186,5 +194,21 @@ public class PathTile
             }
         }
         return ResultPathTemp;
+    }
+    public void DisposePathFinding()
+    {
+        ResultPath.Clear();
+        checkedPositions.Clear();
+        QueuePathsToGetNodes.Clear();
+    }
+    private void IncreasePathCreatedCount()
+    {
+        if(this.startPath != null) this.startPath.pathCreated++;
+        else this.pathCreated++;
+    }
+    private int GetPathCreatedCount()
+    {
+        if(this.startPath != null) return this.startPath.pathCreated;
+        else return this.pathCreated;
     }
 }

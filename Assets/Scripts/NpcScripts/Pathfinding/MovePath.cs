@@ -18,6 +18,8 @@ public class MovePath : MonoBehaviour
     private Tilemap pathTileMap;
     Vector3 direction;
 
+    public global::System.Boolean TargetReached { get => targetReached; set => targetReached = value; }
+
     //Entry
     public void MoveTo(GameObject targetObject)
     {
@@ -26,6 +28,7 @@ public class MovePath : MonoBehaviour
         Vector3Int targetCellPosTemp = pathTileMap.WorldToCell(targetObject.transform.position);
         Vector3Int thisCellPosTemp = pathTileMap.WorldToCell(gameObject.transform.position);
         Move(thisCellPosTemp, targetCellPosTemp);
+        path = null;
     }
     void Move(Vector3Int thisPosition, Vector3Int targetPosition)
     {
@@ -33,7 +36,7 @@ public class MovePath : MonoBehaviour
         path = new PathTile(null, null, thisPosition, targetPosition, pathMap); //new Vector3Int(0, -5,0)
         path.StartPathFinding();
         ResultPath = path.GetResultsInShorcut();
-        path = null;
+        //path.DisposePathFinding();
     }
     private void Start()
     {
@@ -62,10 +65,14 @@ public class MovePath : MonoBehaviour
             transform.position += (direction.normalized*moveSpeed);
             if((transform.position - targetPosition).sqrMagnitude <moveSpeed*moveSpeed)
             {
-                targetReached = true;
                 transform.position = targetPosition;
                 ResultPath.Remove(currentTargetPath);
             }
+        }
+        if(ResultPath.Count == 0 && !targetReached)
+        {
+            path = null;
+            targetReached = true;
         }
     }
     public void SetMoveFunc(MoveFunction moveFunc)

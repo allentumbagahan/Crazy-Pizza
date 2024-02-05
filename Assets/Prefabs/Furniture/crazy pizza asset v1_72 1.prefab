@@ -278,7 +278,7 @@ MonoBehaviour:
   cellPosToWorldDown: {x: 0, y: 0, z: 0}
   furnitureTilemap: {fileID: 0}
   positionToIn: 0000000001000000
-  objectType: 0
+  objectType: 5
 --- !u!1 &8221733506581420370
 GameObject:
   m_ObjectHideFlags: 0
